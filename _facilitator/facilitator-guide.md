@@ -31,21 +31,20 @@ Option B: zip the folder and share it; participants unzip and **File > Open Fold
 
 | Time | Module | Facilitator focus |
 |------|--------|-------------------|
-| 0:00 | **0 Setup** | Get everyone to a working chat. Have 1 helper handle stuck installs. Don't wait for more than 5 minutes per person; pair them up. |
-| 0:20 | **1 Foundations** | Stress: *confident ≠ correct*. Test A (hallucination) is the "aha". Show "vague vs. specific" side by side on screen. |
-| 0:50 | **2 Ask** | The conflict (15 vs. 20 days) and the gym question are the aha moments. Ask the room: "who noticed the conflict?" |
-| 1:20 | **3 Agent** | Live-demo first 3 minutes. The messy CSV is relatable. Emphasise permission prompts and undo. Make sure everyone commits. |
-| 1:55 | Break | Helpers: collect common problems. |
-| 2:05 | **4 Dashboards** | Plan mode first. After each build, force the verification step; ask "who found a wrong number?" Celebrate. |
-| 3:05 | **5 Customize** | The before/after on dashboards sells skills. Keep the analogies (handbook, templates, specialist, playbook). |
-| 3:45 | **6 Copilot app** | Demo, then hands-on. If the app isn't available, demo only. |
-| 4:10 | **7 Responsible AI** | Do the scenarios in pairs. Close with Monday lists. |
-
-Total about 4.5 h with a 10-minute break. For a **3-hour version**: do 0, 1, 2, 3, 4.1-4.3, 7 (skip 4.4, 5, 6). For a **half-day plus**: add the optional demos below.
+| 0:00 | **0 Setup** | Get everyone to a working chat. Have 1 helper handle stuck installs. Don't wait more than 5 minutes per person; pair them up. |
+| 0:10 | **1 Foundations** | Stress: *confident is not correct*. Keep it short; the hands-on starts in Module 2. |
+| 0:30 | **2 Ask** | The hallucination (Module 1 question without docs vs. with docs), the 15 vs. 20 day conflict and the gym question are the aha moments. Ask: "who noticed the conflict?" |
+| 0:55 | **3 Agent** | Live-demo the first 3 minutes. The messy CSV is relatable. Emphasise permission prompts and undo. Make sure everyone commits. |
+| 1:30 | Break | Helpers: collect common problems. |
+| 1:40 | **4 Dashboards** | Plan mode first. After each build, force the verification step; ask "who found a wrong number?" Celebrate. |
+| 2:40 | **5 Customize** | The before/after on dashboards sells skills. Keep the analogies (handbook, templates, specialist, playbook). |
+| 3:20 | **6 Copilot app** | Demo, then hands-on. If the app isn't available, demo only. |
+| 3:45 | **7 Responsible AI** | Do the scenarios in pairs. Close with Monday lists. |
+Total about 4 h with a 10-minute break. For a **3-hour version**: do 0, 1, 2, 3, 4.1-4.3, 7 (skip 4.4, 5, 6). For a **half-day plus**: add the optional demos below.
 
 ## 3. Wow moments to plan for
 
-1. Hallucinated parental-leave number (Module 1) vs. cited answer (Module 2).
+1. Confident parental-leave answer with no documents (Module 1) vs. cited answer (Module 2).
 2. 26 welcome emails created in a minute (Module 3), with `[TODO]` where data is missing.
 3. Wireframe image becomes a working dashboard (Module 4.3).
 4. Same prompt, before and after the skill: consistent branded dashboards (Module 5.5).
