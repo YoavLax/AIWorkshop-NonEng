@@ -11,14 +11,9 @@ Do not share this folder (`_facilitator/`) with participants. It contains the an
 - [ ] Optional: share the Microsoft **Live Preview** VS Code extension.
 
 **Create the participant repository (recommended)**
-Participants should open the `non-eng-workshop` folder itself as the workspace root (so the `.github` files they create apply, and the repo-level instructions of the engineer workshop don't).
+This folder is its own repository. Participants should open it as the workspace root (so the `.github` files they create apply).
 
-Option A, template repo (best):
-```
-git subtree split --prefix=non-eng-workshop -b non-eng-publish
-git push <new-repo-url> non-eng-publish:main
-```
-Then mark the new repo as a **Template repository** (Settings). Participants click **Use this template** and then clone it in VS Code. Before publishing: delete `_facilitator/` from the published copy, or keep it in a private branch.
+Option A, template repo (best): push this repo to GitHub, mark it as a **Template repository** (Settings), and make sure the published copy does not include `_facilitator/` (for example keep a private facilitator repo, or delete the folder from the template). Participants click **Use this template**, then clone it in VS Code.
 
 Option B: zip the folder and share it; participants unzip and **File > Open Folder**. (Participants then need to run **Git: Initialize Repository** for Module 3's commit step, and the Copilot app needs a Git repository.)
 

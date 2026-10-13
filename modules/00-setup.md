@@ -16,7 +16,7 @@ You should have installed VS Code, Git, and your GitHub Copilot licence is activ
 3. If VS Code asks "Do you trust the authors?", choose **Yes, I trust the authors** (it is your own copy).
 4. In the left panel (**Explorer**) you should see `data`, `docs`, `modules`, `output`, ...
 
-> **Check:** the Explorer's top line shows the workshop folder name, and `data` is directly under it. If you see a bigger folder containing `non-eng-workshop`, use **File > Open Folder** and pick the inner one.
+> **Check:** the Explorer's top line shows the workshop folder name, and `data` is directly under it. If you see a different or bigger folder, use **File > Open Folder** and pick the workshop folder.
 
 ## 0.3 Take the tour (10 min)
 
