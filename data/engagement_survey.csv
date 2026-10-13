@@ -1,0 +1,151 @@
+﻿response_id,department,location,work_model,tenure_band,enps_0_to_10,manager_support,career_growth,workload,recognition,compensation_fairness,inclusion,goal_clarity,comment
+R1001,Customer Support,Toronto,Hybrid,<1 year,7,4,3,3,3,3,5,4,Inclusive team culture - everyone's voice is heard.
+R1002,Engineering,Austin,Hybrid,<1 year,10,4,3,4,3,5,4,4,The recent compensation review was transparent.
+R1003,Customer Support,Berlin,Hybrid,5+ years,6,3,3,3,3,4,4,4,"Honestly, Dana Whitfield (dana.whitfield@brightwave.example) never gives credit to her team."
+R1004,Sales,Toronto,Hybrid,<1 year,10,4,3,4,4,4,5,5,I always know what the priorities are.
+R1005,Customer Support,Toronto,Onsite,3-5 years,8,3,2,2,5,5,3,3,Please talk to Marcus Ellery about the scheduling chaos - call him on 555-0142.
+R1006,Engineering,Austin,Remote,1-3 years,7,4,5,3,5,5,5,5,"My skip-level, Rhea Kapoor, has been great, but my direct manager Tom Bailey avoids hard conversations."
+R1007,Sales,London,Remote,1-3 years,9,5,3,4,5,4,5,3,Shout-outs from leadership make a real difference.
+R1008,People & Culture,Austin,Hybrid,1-3 years,6,4,5,3,5,4,5,4,I can see a clear path to my next role.
+R1009,Sales,New York,Hybrid,5+ years,8,3,3,4,3,3,4,3,I am considering leaving and have already spoken to a recruiter - please keep this anonymous.
+R1010,Marketing,Toronto,Hybrid,1-3 years,8,4,5,3,4,3,5,3,I feel I can be myself at work.
+R1011,Engineering,Berlin,Hybrid,5+ years,9,3,4,3,4,5,5,5,"I have a medical condition that makes the office commute hard, and nobody has followed up on my accommodation request."
+R1012,Customer Support,Austin,Hybrid,<1 year,8,4,4,3,4,5,5,5,Inclusive team culture - everyone's voice is heard.
+R1013,Engineering,London,Remote,<1 year,8,4,3,4,5,3,4,4,I feel appreciated for the work I do.
+R1014,Customer Support,Toronto,Hybrid,1-3 years,6,3,4,2,4,3,5,5,Inclusive team culture - everyone's voice is heard.
+R1015,Sales,Austin,Hybrid,1-3 years,4,5,3,4,4,5,3,5,Pay feels fair for the role.
+R1016,Sales,Austin,Hybrid,<1 year,7,4,5,4,3,5,4,4,Pay feels fair for the role.
+R1017,Sales,Austin,Remote,1-3 years,7,5,3,4,3,5,4,3,
+R1018,Sales,Toronto,Hybrid,<1 year,7,5,3,5,4,4,4,4,"Good balance, and the team covers for each other."
+R1019,Customer Support,New York,Hybrid,3-5 years,6,3,2,4,4,3,3,4,I feel appreciated for the work I do.
+R1020,Product,Toronto,Onsite,<1 year,8,5,4,4,3,4,4,3,
+R1021,Customer Support,Austin,Remote,3-5 years,8,4,4,2,3,5,3,4,Pay feels fair for the role.
+R1022,Marketing,New York,Remote,1-3 years,9,4,4,3,3,4,4,3,The recent compensation review was transparent.
+R1023,Sales,Berlin,Hybrid,5+ years,4,3,4,4,4,3,4,5,Quarterly goals are clear and realistic.
+R1024,Operations,Austin,Remote,<1 year,6,4,5,3,2,4,3,5,
+R1025,Engineering,New York,Hybrid,1-3 years,7,4,3,5,4,5,4,5,"Good balance, and the team covers for each other."
+R1026,Legal,Berlin,Hybrid,5+ years,7,5,3,4,5,3,5,5,My manager genuinely has my back.
+R1027,Sales,London,Hybrid,1-3 years,6,4,2,4,2,4,2,3,There is no visible path to promotion.
+R1028,Customer Support,Berlin,Hybrid,5+ years,9,5,3,3,4,4,5,4,I feel I can be myself at work.
+R1029,Engineering,New York,Remote,1-3 years,5,5,3,3,3,3,2,5,
+R1030,Engineering,London,Hybrid,1-3 years,5,5,4,3,4,4,2,3,Regular 1:1s with actionable feedback - thank you.
+R1031,Product,London,Hybrid,1-3 years,5,4,4,4,3,4,4,4,
+R1032,Customer Support,London,Hybrid,<1 year,8,3,4,3,3,5,5,2,Pay feels fair for the role.
+R1033,Sales,Toronto,Hybrid,1-3 years,8,4,3,5,5,3,4,4,I feel appreciated for the work I do.
+R1034,Engineering,Austin,Hybrid,1-3 years,10,2,5,3,4,5,4,5,
+R1035,Engineering,New York,Remote,5+ years,10,4,4,4,2,2,5,4,
+R1036,Engineering,London,Hybrid,<1 year,8,5,4,3,5,3,5,3,
+R1037,People & Culture,Berlin,Hybrid,1-3 years,6,4,5,3,3,4,4,4,
+R1038,Engineering,New York,Hybrid,<1 year,7,4,5,4,4,3,4,5,The mentoring program has been great for me.
+R1039,Marketing,Berlin,Hybrid,<1 year,6,5,3,5,4,5,5,3,Regular 1:1s with actionable feedback - thank you.
+R1040,Sales,New York,Hybrid,1-3 years,6,5,2,5,2,3,3,5,
+R1041,Engineering,Berlin,Hybrid,1-3 years,10,4,4,4,3,4,3,5,Quarterly goals are clear and realistic.
+R1042,Sales,New York,Hybrid,3-5 years,4,3,4,5,5,4,5,4,Inclusive team culture - everyone's voice is heard.
+R1043,Engineering,New York,Hybrid,<1 year,5,4,3,4,4,5,4,3,Pay feels fair for the role.
+R1044,Legal,Toronto,Hybrid,3-5 years,8,2,5,4,3,3,5,4,Inclusive team culture - everyone's voice is heard.
+R1045,Operations,Austin,Hybrid,3-5 years,7,4,3,4,4,5,5,4,I feel I can be myself at work.
+R1046,Sales,Berlin,Onsite,3-5 years,9,3,3,2,4,3,4,3,Ticket volume has doubled and the team has not grown.
+R1047,Engineering,London,Hybrid,<1 year,10,4,5,5,3,5,3,4,Workload is demanding but manageable.
+R1048,Engineering,New York,Hybrid,1-3 years,8,4,5,3,3,3,3,4,I can see a clear path to my next role.
+R1049,Engineering,Toronto,Hybrid,<1 year,10,4,3,5,3,5,5,4,The recent compensation review was transparent.
+R1050,Operations,London,Remote,<1 year,10,4,4,4,3,4,3,4,I can see a clear path to my next role.
+R1051,Engineering,New York,Hybrid,1-3 years,10,4,4,3,4,3,5,4,
+R1052,Operations,New York,Hybrid,<1 year,9,4,2,4,4,4,5,5,Inclusive team culture - everyone's voice is heard.
+R1053,Operations,London,Remote,<1 year,9,5,2,5,3,5,3,5,Regular 1:1s with actionable feedback - thank you.
+R1054,People & Culture,New York,Remote,1-3 years,8,3,2,4,2,5,2,4,Pay feels fair for the role.
+R1055,People & Culture,Toronto,Onsite,1-3 years,5,3,3,4,3,4,4,5,
+R1056,Engineering,Austin,Onsite,<1 year,10,5,4,5,3,4,4,4,Regular 1:1s with actionable feedback - thank you.
+R1057,Operations,New York,Hybrid,<1 year,8,3,4,5,5,4,4,5,
+R1058,Customer Support,London,Onsite,3-5 years,3,5,1,2,3,3,5,5,My manager genuinely has my back.
+R1059,Product,New York,Hybrid,<1 year,5,2,5,4,5,5,4,3,The mentoring program has been great for me.
+R1060,Engineering,New York,Remote,3-5 years,8,4,5,3,5,5,4,4,
+R1061,Engineering,Austin,Hybrid,1-3 years,5,3,3,3,4,3,4,5,I always know what the priorities are.
+R1062,Marketing,London,Hybrid,<1 year,9,4,5,5,2,5,5,4,The recent compensation review was transparent.
+R1063,Sales,New York,Remote,1-3 years,8,4,3,3,2,2,4,3,Remote teammates seem invisible when recognition is handed out.
+R1064,Engineering,London,Remote,1-3 years,7,3,4,4,3,4,3,3,
+R1065,Engineering,London,Hybrid,5+ years,7,3,2,4,3,5,3,3,The recent compensation review was transparent.
+R1066,Customer Support,Berlin,Remote,5+ years,5,5,3,3,3,4,3,5,
+R1067,Customer Support,New York,Hybrid,1-3 years,6,3,4,3,4,3,4,4,Inclusive team culture - everyone's voice is heard.
+R1068,Marketing,Toronto,Onsite,<1 year,9,3,5,5,5,4,5,5,
+R1069,Marketing,Berlin,Hybrid,1-3 years,9,5,5,4,4,4,4,4,
+R1070,Finance,Toronto,Remote,5+ years,6,4,5,4,3,4,4,3,
+R1071,Finance,Toronto,Hybrid,<1 year,6,3,5,5,5,3,4,5,The mentoring program has been great for me.
+R1072,Operations,Berlin,Hybrid,<1 year,10,4,5,5,2,4,5,4,Workload is demanding but manageable.
+R1073,Customer Support,New York,Hybrid,3-5 years,6,5,4,3,3,5,5,5,The recent compensation review was transparent.
+R1074,Engineering,Toronto,Hybrid,3-5 years,6,4,4,4,5,3,4,4,Shout-outs from leadership make a real difference.
+R1075,Customer Support,Toronto,Hybrid,<1 year,7,5,5,4,3,4,3,4,The mentoring program has been great for me.
+R1076,Product,New York,Hybrid,3-5 years,7,3,3,4,4,5,5,3,The recent compensation review was transparent.
+R1077,Finance,Austin,Hybrid,1-3 years,8,3,5,3,4,4,5,4,I feel I can be myself at work.
+R1078,Sales,Toronto,Onsite,1-3 years,5,4,4,4,2,2,4,4,
+R1079,Engineering,Berlin,Hybrid,1-3 years,6,2,4,4,5,5,2,5,
+R1080,Finance,Austin,Remote,<1 year,7,4,3,4,4,5,3,3,
+R1081,Customer Support,Berlin,Remote,3-5 years,4,4,2,3,3,5,4,4,The recent compensation review was transparent.
+R1082,Engineering,New York,Hybrid,1-3 years,6,2,3,2,3,4,5,3,I feel I can be myself at work.
+R1083,Engineering,Austin,Hybrid,<1 year,10,5,5,5,4,4,5,3,Workload is demanding but manageable.
+R1084,Finance,Austin,Hybrid,3-5 years,7,3,5,4,4,5,4,5,The mentoring program has been great for me.
+R1085,Product,Berlin,Hybrid,1-3 years,8,4,4,3,3,5,5,4,
+R1086,Sales,Toronto,Hybrid,1-3 years,3,4,3,4,4,5,3,4,
+R1087,Customer Support,Berlin,Hybrid,1-3 years,9,5,4,3,4,4,4,4,
+R1088,Operations,New York,Hybrid,<1 year,9,3,5,4,4,4,3,4,The mentoring program has been great for me.
+R1089,Marketing,New York,Hybrid,1-3 years,7,3,3,4,3,2,4,4,Quarterly goals are clear and realistic.
+R1090,Sales,New York,Onsite,3-5 years,7,5,1,2,4,5,4,4,
+R1091,Engineering,Toronto,Hybrid,1-3 years,5,4,2,5,5,3,3,3,I feel appreciated for the work I do.
+R1092,Product,Austin,Hybrid,1-3 years,6,4,3,4,4,5,3,3,Pay feels fair for the role.
+R1093,Sales,Toronto,Hybrid,1-3 years,5,3,3,3,3,3,4,4,Quarterly goals are clear and realistic.
+R1094,Engineering,Austin,Hybrid,1-3 years,10,4,4,4,5,4,5,5,Quarterly goals are clear and realistic.
+R1095,Engineering,New York,Hybrid,<1 year,7,5,4,5,3,5,5,5,
+R1096,Legal,Austin,Hybrid,5+ years,9,2,4,4,4,2,4,4,
+R1097,Customer Support,Austin,Hybrid,3-5 years,6,5,4,3,5,4,5,4,Shout-outs from leadership make a real difference.
+R1098,Operations,New York,Onsite,<1 year,10,4,5,4,5,4,4,4,The mentoring program has been great for me.
+R1099,Engineering,Austin,Hybrid,1-3 years,3,5,3,2,4,5,3,4,
+R1100,Finance,Austin,Hybrid,3-5 years,9,4,2,4,5,3,4,4,
+R1101,Operations,London,Hybrid,1-3 years,8,5,4,3,3,5,2,4,The recent compensation review was transparent.
+R1102,People & Culture,Austin,Hybrid,1-3 years,7,4,4,4,5,3,4,4,Shout-outs from leadership make a real difference.
+R1103,Sales,London,Hybrid,<1 year,9,5,4,4,5,5,5,3,Pay feels fair for the role.
+R1104,Sales,Toronto,Hybrid,1-3 years,4,4,4,4,2,3,4,3,Good work goes unnoticed.
+R1105,Sales,Austin,Remote,1-3 years,4,4,1,5,2,3,3,5,Quarterly goals are clear and realistic.
+R1106,Sales,Austin,Remote,1-3 years,9,3,3,3,2,4,3,5,I always know what the priorities are.
+R1107,People & Culture,London,Remote,1-3 years,7,5,5,4,3,4,3,2,I can see a clear path to my next role.
+R1108,Product,New York,Hybrid,1-3 years,9,5,4,4,5,4,5,3,
+R1109,Customer Support,Berlin,Remote,5+ years,8,2,4,4,2,4,4,3,"Good balance, and the team covers for each other."
+R1110,Product,Berlin,Hybrid,<1 year,9,5,4,4,3,3,5,4,Inclusive team culture - everyone's voice is heard.
+R1111,Engineering,New York,Hybrid,5+ years,8,4,5,5,4,4,5,3,
+R1112,Marketing,New York,Remote,<1 year,5,5,4,4,3,3,3,5,
+R1113,Sales,London,Onsite,3-5 years,9,5,3,3,2,3,4,5,
+R1114,Marketing,New York,Hybrid,1-3 years,7,4,5,3,5,4,5,5,
+R1115,Engineering,Austin,Hybrid,1-3 years,9,4,3,4,5,4,4,4,Shout-outs from leadership make a real difference.
+R1116,Product,Berlin,Hybrid,1-3 years,7,4,5,4,3,5,5,4,Pay feels fair for the role.
+R1117,Sales,London,Hybrid,5+ years,5,3,2,5,5,4,4,4,
+R1118,Marketing,Berlin,Hybrid,1-3 years,8,3,3,2,3,3,4,3,
+R1119,Engineering,Austin,Hybrid,1-3 years,7,4,4,4,5,5,3,3,I feel appreciated for the work I do.
+R1120,Operations,New York,Remote,<1 year,9,5,4,5,3,5,5,3,I feel I can be myself at work.
+R1121,People & Culture,Austin,Hybrid,3-5 years,7,3,3,4,4,5,3,4,
+R1122,Customer Support,London,Hybrid,<1 year,7,4,4,1,2,3,5,4,Inclusive team culture - everyone's voice is heard.
+R1123,Sales,Austin,Hybrid,1-3 years,7,5,3,5,4,4,4,3,
+R1124,Product,London,Remote,<1 year,6,4,5,4,3,4,4,3,I can see a clear path to my next role.
+R1125,Customer Support,New York,Onsite,<1 year,8,5,4,3,4,3,5,3,Regular 1:1s with actionable feedback - thank you.
+R1126,Engineering,Berlin,Remote,1-3 years,7,4,3,4,4,5,3,4,Pay feels fair for the role.
+R1127,Sales,Austin,Hybrid,1-3 years,6,4,4,3,5,4,4,3,Shout-outs from leadership make a real difference.
+R1128,Engineering,London,Hybrid,<1 year,9,5,5,4,4,5,4,4,
+R1129,Engineering,New York,Onsite,1-3 years,6,5,4,5,4,2,4,3,
+R1130,Finance,London,Hybrid,5+ years,9,5,4,3,5,3,4,5,I always know what the priorities are.
+R1131,People & Culture,London,Hybrid,5+ years,6,4,5,4,5,5,2,4,The recent compensation review was transparent.
+R1132,Engineering,London,Hybrid,1-3 years,4,4,4,2,4,4,4,3,Pay feels fair for the role.
+R1133,Marketing,New York,Hybrid,<1 year,8,4,4,5,5,3,3,5,Shout-outs from leadership make a real difference.
+R1134,Sales,New York,Hybrid,1-3 years,7,3,4,3,4,3,5,1,
+R1135,Engineering,London,Hybrid,1-3 years,4,3,3,3,4,5,4,5,The recent compensation review was transparent.
+R1136,Customer Support,New York,Hybrid,1-3 years,5,5,3,4,4,3,2,4,
+R1137,Finance,New York,Onsite,1-3 years,5,5,5,4,4,3,4,3,I can see a clear path to my next role.
+R1138,Customer Support,New York,Onsite,<1 year,8,5,5,3,4,3,5,2,My manager genuinely has my back.
+R1139,Engineering,Toronto,Hybrid,1-3 years,7,4,5,4,4,4,3,4,I can see a clear path to my next role.
+R1140,Finance,New York,Onsite,3-5 years,6,3,3,5,3,4,4,5,
+R1141,Engineering,Austin,Onsite,<1 year,6,3,5,5,3,4,5,5,I can see a clear path to my next role.
+R1142,Marketing,London,Onsite,<1 year,8,5,3,4,5,2,4,4,
+R1143,Sales,London,Hybrid,<1 year,7,4,3,5,5,4,4,4,
+R1144,Product,Toronto,Remote,<1 year,5,5,4,5,4,4,5,4,"Good balance, and the team covers for each other."
+R1145,Sales,London,Hybrid,<1 year,9,4,4,4,5,5,3,4,Pay feels fair for the role.
+R1146,Marketing,Berlin,Hybrid,<1 year,8,4,4,5,4,5,4,3,
+R1147,Marketing,Toronto,Hybrid,1-3 years,7,4,4,5,5,3,5,3,
+R1148,Marketing,Austin,Hybrid,<1 year,10,4,5,4,5,4,5,4,I can see a clear path to my next role.
+R1149,Operations,Toronto,Remote,<1 year,7,5,4,4,4,5,2,3,The recent compensation review was transparent.
+R1150,Marketing,London,Remote,1-3 years,9,3,5,4,5,4,4,3,

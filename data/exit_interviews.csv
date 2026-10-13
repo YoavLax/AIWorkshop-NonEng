@@ -1,0 +1,25 @@
+﻿employee_id,exit_date,exit_type,primary_reason,would_recommend_company,regrettable_loss,comment
+E1036,2025-10-23,Voluntary,Career growth,Yes,Yes,No clear path to the next level.
+E1027,2025-11-13,Voluntary,Compensation,Yes,No,Compensation review kept getting postponed.
+E1148,2025-11-20,Voluntary,Work-life balance,Yes,No,Constant after-hours requests wore me down.
+E1007,2025-11-26,Voluntary,Career growth,Yes,Yes,I wanted more responsibility than my role allowed.
+E1055,2026-01-27,Voluntary,Relocation,Yes,No,Moving to a city where we have no office.
+E1122,2026-01-29,Voluntary,Compensation,Yes,No,Offered a significantly higher salary elsewhere.
+E1174,2026-02-21,Voluntary,Work-life balance,Yes,Yes,Constant after-hours requests wore me down.
+E1064,2026-03-09,Voluntary,Better external opportunity,Maybe,No,Received an opportunity I could not turn down.
+E1129,2026-04-02,Voluntary,Compensation,Yes,Yes,Compensation review kept getting postponed.
+E1006,2026-05-01,Voluntary,Compensation,Yes,No,Compensation review kept getting postponed.
+E1182,2026-05-09,Voluntary,Manager relationship,No,No,Priorities changed weekly without explanation.
+E1070,2026-05-17,Voluntary,Compensation,Yes,Yes,Compensation review kept getting postponed.
+E1177,2026-05-25,Voluntary,Better external opportunity,Yes,No,Received an opportunity I could not turn down.
+E1034,2026-06-15,Voluntary,Work-life balance,Maybe,Yes,Constant after-hours requests wore me down.
+E1163,2026-07-01,Voluntary,Better external opportunity,Maybe,Yes,Another company offered a bigger scope.
+E1205,2026-07-08,Involuntary,Role eliminated,Maybe,No,Position was eliminated in a reorganisation.
+E1178,2026-08-08,Involuntary,Role eliminated,Maybe,No,Position was eliminated in a reorganisation.
+E1184,2026-08-09,Voluntary,Career growth,Maybe,No,Promotion criteria were never explained.
+E1208,2026-08-13,Voluntary,Relocation,Maybe,No,Relocating for family reasons.
+E1210,2026-08-13,Voluntary,Better external opportunity,Yes,No,Received an opportunity I could not turn down.
+E1090,2026-09-02,Voluntary,Work-life balance,Yes,No,Constant after-hours requests wore me down.
+E1201,2026-09-15,Voluntary,Better external opportunity,Yes,No,Another company offered a bigger scope.
+E1172,2026-09-27,Voluntary,Relocation,Yes,No,Relocating for family reasons.
+E1212,2026-09-29,Involuntary,Role eliminated,No,No,Position was eliminated in a reorganisation.

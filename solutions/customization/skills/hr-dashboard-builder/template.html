@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+  HR DASHBOARD TEMPLATE (Brightwave house style)
+  - One self-contained file: double-click it to open in any browser. No installs, no internet needed.
+  - Data never leaves the computer: the user picks a CSV file with the button (or drags it onto the page).
+  - If the page is opened through a local web server (e.g. the "Live Preview" extension in VS Code),
+    it also auto-loads CONFIG.dataPath.
+  Save finished dashboards in the output/ folder so the relative path to ../assets/ keeps working.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People Dashboard</title>
+<style>
+  :root {
+    --navy: #1B2A49; --teal: #00A6A6; --coral: #FF6B5E; --amber: #FFB400;
+    --bg: #F5F7FA; --card: #FFFFFF; --muted: #6B7A90; --line: #E3E8EF;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; background: var(--bg); color: var(--navy); }
+  header.top { background: var(--navy); color: #fff; padding: 20px 32px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header.top h1 { margin: 0; font-size: 26px; }
+  header.top p { margin: 4px 0 0; color: #B9C4D6; font-size: 14px; }
+  .btn { background: var(--teal); color: #fff; padding: 10px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+  .btn:hover { filter: brightness(1.08); }
+  main { padding: 24px 32px 8px; max-width: 1400px; margin: 0 auto; }
+  .filters { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; align-items: end; }
+  .filters label { font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+  .filters select, .filters input { padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: #fff; font-size: 14px; color: var(--navy); }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+  .kpi { background: var(--card); border-radius: 10px; padding: 16px 18px; border-left: 5px solid var(--teal); box-shadow: 0 1px 3px rgba(27,42,73,.08); }
+  .kpi .label { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .kpi .value { font-size: 34px; font-weight: 700; margin: 4px 0 2px; }
+  .kpi .sub { font-size: 12px; color: var(--muted); }
+  .charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; margin-bottom: 20px; }
+  .card { background: var(--card); border-radius: 10px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(27,42,73,.08); }
+  .card h2 { margin: 0 0 2px; font-size: 16px; }
+  .card .note { margin: 0 0 10px; font-size: 12px; color: var(--muted); }
+  .chart-box { position: relative; height: 280px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; border-bottom: 2px solid var(--line); padding: 8px 6px; }
+  td { padding: 8px 6px; border-bottom: 1px solid var(--line); }
+  .empty { margin: 60px auto; max-width: 560px; text-align: center; color: var(--muted); border: 2px dashed #C5CEDB; border-radius: 12px; padding: 40px 24px; background: #fff; }
+  .empty.drag { border-color: var(--teal); background: #EAF8F8; }
+  .error { margin: 16px 32px; padding: 12px 16px; border-radius: 8px; background: #FFEDEB; color: #9C2F25; border-left: 5px solid var(--coral); }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 16px 32px 32px; }
+  @media print { header.top .btn, .filters { display: none; } body { background: #fff; } .card, .kpi { box-shadow: none; border: 1px solid var(--line); } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1 id="title">People Dashboard</h1>
+    <p id="subtitle">Choose a CSV file to begin</p>
+  </div>
+  <label class="btn"><span id="pickText">Choose CSV file</span><input id="file" type="file" accept=".csv,text/csv" hidden></label>
+</header>
+<div id="error" class="error" hidden></div>
+<div id="empty" class="empty">
+  <strong>Drop your CSV file here</strong><br>or use the "Choose CSV file" button above.<br>
+  <small>Your data stays on this computer. Nothing is uploaded.</small>
+</div>
+<main id="app" hidden>
+  <section id="filters" class="filters"></section>
+  <section id="kpis" class="kpis"></section>
+  <section id="charts" class="charts"></section>
+  <section id="tables"></section>
+</main>
+<footer>
+  Source: <span id="source">(no file loaded)</span> &middot; Built with GitHub Copilot &middot;
+  Contains employee data: share only with people who are authorised to see it. Small groups (fewer than 5 people) should not be shown.
+</footer>
+
+<script src="../assets/vendor/chart.umd.js"></script>
+
+<!-- ===================== HELPERS (reuse as-is) ===================== -->
+<script>
+const HR = (() => {
+  const palette = ['#00A6A6', '#1B2A49', '#FF6B5E', '#FFB400', '#6C8EBF', '#8E6BBF', '#7FB069', '#C17C74'];
+  const charts = {};
+  const $ = (id) => document.getElementById(id);
+  const MIN_GROUP = 5;
+
+  // Robust CSV parser: handles quotes, commas inside quotes, CRLF and the Excel BOM.
+  function parseCSV(text) {
+    text = text.replace(/^\uFEFF/, '');
+    const rows = []; let row = [], field = '', inQ = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (inQ) {
+        if (c === '"') { if (text[i + 1] === '"') { field += '"'; i++; } else inQ = false; }
+        else field += c;
+      } else if (c === '"') inQ = true;
+      else if (c === ',') { row.push(field); field = ''; }
+      else if (c === '\n' || c === '\r') {
+        if (c === '\r' && text[i + 1] === '\n') i++;
+        row.push(field); field = '';
+        if (row.length > 1 || row[0] !== '') rows.push(row);
+        row = [];
+      } else field += c;
+    }
+    if (field !== '' || row.length) { row.push(field); rows.push(row); }
+    if (!rows.length) return [];
+    const header = rows.shift().map((h) => h.trim());
+    return rows.map((r) => Object.fromEntries(header.map((h, i) => [h, (r[i] ?? '').trim()])));
+  }
+
+  function showError(msg) { const e = $('error'); e.textContent = msg; e.hidden = !msg; }
+  function clear(id) { $(id).replaceChildren(); }
+  function el(tag, cls, text) { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+
+  function kpi(label, value, sub) {
+    const k = el('div', 'kpi');
+    k.append(el('div', 'label', label), el('div', 'value', String(value)), el('div', 'sub', sub || ''));
+    $('kpis').append(k);
+  }
+
+  function chartCard(id, title, note) {
+    const card = el('div', 'card');
+    card.append(el('h2', null, title), el('p', 'note', note || ''));
+    const box = el('div', 'chart-box'); const canvas = el('canvas'); canvas.id = id; box.append(canvas); card.append(box);
+    $('charts').append(card);
+    return canvas;
+  }
+
+  function chart(canvas, type, labels, datasets, options = {}) {
+    if (charts[canvas.id]) charts[canvas.id].destroy();
+    const multi = type === 'doughnut' || type === 'pie';
+    datasets = datasets.map((d, i) => ({
+      backgroundColor: multi ? palette : palette[i % palette.length], borderColor: multi ? '#fff' : palette[i % palette.length], ...d }));
+    charts[canvas.id] = new Chart(canvas, {
+      type, data: { labels, datasets },
+      options: { responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: datasets.length > 1 || multi, position: 'bottom' } }, ...options }
+    });
+    return charts[canvas.id];
+  }
+
+  function table(title, columns, rows) {
+    const card = el('div', 'card'); card.append(el('h2', null, title));
+    const t = el('table'); const thead = el('thead'); const trh = el('tr');
+    columns.forEach((c) => trh.append(el('th', null, c.label))); thead.append(trh); t.append(thead);
+    const tb = el('tbody');
+    rows.forEach((r) => { const tr = el('tr'); columns.forEach((c) => tr.append(el('td', null, String(c.value(r) ?? '')))); tb.append(tr); });
+    t.append(tb); card.append(t); $('tables').append(card);
+  }
+
+  function select(label, options, onChange, id) {
+    const wrap = el('label', null, label); const s = el('select'); if (id) s.id = id;
+    options.forEach((o) => { const opt = el('option', null, o); opt.value = o; s.append(opt); });
+    s.addEventListener('change', () => onChange(s.value)); wrap.append(s); $('filters').append(wrap); return s;
+  }
+
+  function dateInput(label, value, onChange) {
+    const wrap = el('label', null, label); const i = el('input'); i.type = 'date'; i.value = value;
+    i.addEventListener('change', () => onChange(i.value)); wrap.append(i); $('filters').append(wrap); return i;
+  }
+
+  const countBy = (rows, fn) => { const m = new Map(); rows.forEach((r) => { const k = fn(r) || '(blank)'; m.set(k, (m.get(k) || 0) + 1); }); return m; };
+  const entries = (m, desc = true) => [...m.entries()].sort((a, b) => (desc ? b[1] - a[1] : a[1] - b[1]));
+  const avg = (arr) => (arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0);
+  const pct = (n, d) => (d ? Math.round((1000 * n) / d) / 10 + '%' : 'n/a');
+  const unique = (rows, key) => [...new Set(rows.map((r) => r[key]).filter(Boolean))].sort();
+  // Hide groups that are too small to be anonymous.
+  const suppressSmall = (m) => entries(m).filter(([, n]) => n >= MIN_GROUP);
+  const toDate = (s) => { if (!s) return null; const d = new Date(s + 'T00:00:00'); return isNaN(d) ? null : d; };
+  const monthKey = (d) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0');
+
+  // config.multi = false (default): render(rows) receives the rows of ONE csv file.
+  // config.multi = true: the user selects several CSV files at once and render(files) receives an object keyed by
+  // file name without ".csv" (lower-case), e.g. files.employees and files.exit_interviews.
+  function start(config, render) {
+    $('title').textContent = config.title; document.title = config.title;
+    $('file').multiple = !!config.multi;
+    if (config.multi) $('pickText').textContent = 'Choose CSV files';
+    if (config.multi) $('empty').innerHTML = '<strong>Select all the CSV files you need</strong> (' + (config.requiredFiles || []).join(', ') +
+      ')<br>using the "Choose CSV files" button above, or drop them here.<br><small>Your data stays on this computer. Nothing is uploaded.</small>';
+    const keyOf = (name) => name.replace(/\.csv$/i, '').toLowerCase();
+    const onData = (data, label) => {
+      showError('');
+      if (config.multi) {
+        const missing = (config.requiredFiles || []).filter((f) => !(f in data));
+        if (missing.length) { showError('Please also select: ' + missing.map((m) => m + '.csv').join(', ')); return; }
+      } else {
+        const missingCols = (config.requiredColumns || []).filter((c) => !(data[0] && c in data[0]));
+        if (!data.length || missingCols.length) {
+          showError(missingCols.length ? 'This file is missing the column(s): ' + missingCols.join(', ') + '. Did you pick the right CSV?' : 'The file is empty.');
+          return;
+        }
+      }
+      $('source').textContent = label; $('empty').hidden = true; $('app').hidden = false;
+      try { render(data, label); } catch (e) { console.error(e); showError('Something went wrong while building the dashboard: ' + e.message); }
+    };
+    const handle = (parsed) => (config.multi
+      ? onData(Object.fromEntries(parsed.map((p) => [keyOf(p.name), p.rows])), parsed.map((p) => p.name).join(', '))
+      : onData(parsed[0].rows, parsed[0].name));
+    const readFile = (file) => new Promise((ok, fail) => { const r = new FileReader(); r.onload = () => ok({ name: file.name, rows: parseCSV(r.result) }); r.onerror = fail; r.readAsText(file); });
+    const readFiles = (list) => Promise.all([...list].map(readFile)).then(handle).catch(() => showError('Could not read the selected file(s).'));
+    $('file').addEventListener('change', (e) => e.target.files.length && readFiles(e.target.files));
+    document.body.addEventListener('dragover', (e) => { e.preventDefault(); $('empty').classList.add('drag'); });
+    document.body.addEventListener('dragleave', () => $('empty').classList.remove('drag'));
+    document.body.addEventListener('drop', (e) => { e.preventDefault(); $('empty').classList.remove('drag'); if (e.dataTransfer.files.length) readFiles(e.dataTransfer.files); });
+    // Auto-load only works when the page is served by a local web server (for example the "Live Preview" extension).
+    const paths = config.multi ? (config.dataPaths || []) : (config.dataPath ? [config.dataPath] : []);
+    if (paths.length && location.protocol.startsWith('http')) {
+      Promise.all(paths.map((u) => fetch(u).then((r) => (r.ok ? r.text() : Promise.reject())).then((x) => ({ name: u.split('/').pop(), rows: parseCSV(x) }))))
+        .then(handle).catch(() => {});
+    }
+  }
+
+  return { palette, $, el, clear, kpi, chartCard, chart, table, select, dateInput, countBy, entries, avg, pct, unique, suppressSmall, toDate, monthKey, start, MIN_GROUP };
+})();
+</script>
+
+<!-- ===================== YOUR DASHBOARD (replace this block) ===================== -->
+<script>
+const CONFIG = {
+  title: 'People Dashboard (template demo)',
+  dataPath: '../data/employees.csv', // only used when served over http (e.g. Live Preview)
+  requiredColumns: [],               // e.g. ['department', 'hire_date']
+};
+
+// Demo: row count, column count and a bar chart of the first column that has 2-12 distinct values.
+function render(rows) {
+  ['filters', 'kpis', 'charts', 'tables'].forEach(HR.clear);
+  const cols = Object.keys(rows[0]);
+  HR.kpi('Rows', rows.length, 'records in this file');
+  HR.kpi('Columns', cols.length, cols.slice(0, 3).join(', ') + '...');
+  const col = cols.find((c) => { const n = new Set(rows.map((r) => r[c])).size; return n >= 2 && n <= 12; });
+  if (col) {
+    const e = HR.entries(HR.countBy(rows, (r) => r[col]));
+    HR.chart(HR.chartCard('demo', 'Records by ' + col), 'bar', e.map((x) => x[0]), [{ label: 'Records', data: e.map((x) => x[1]) }]);
+  }
+}
+HR.start(CONFIG, render);
+</script>
+</body>
+</html>
