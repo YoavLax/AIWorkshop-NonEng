@@ -72,9 +72,31 @@ Optional: the **Live Preview** extension (Microsoft) for VS Code, so dashboards 
 **Goal:** a working chat and a feel for where things are.
 
 1. Open **VS Code** and check you are signed in with GitHub (account icon, bottom of the left bar).
-2. Press `Ctrl+Shift+P` (Mac `Cmd+Shift+P`) to open the **Command Palette** (the search box for every command). Run **Git: Clone**, paste the repository link from your facilitator, choose a folder, then **Open**. Choose **Yes, I trust the authors**.
-3. Make sure `data`, `docs` and `output` are directly visible in the **Explorer** (left panel). If not, use **File > Open Folder** and pick the workshop folder. Copilot only reads your team's rules if this is the top-level folder.
-4. Open the chat with `Ctrl+Alt+I` (Mac `Ctrl+Cmd+I`) and find the **mode picker** at the bottom of the chat box:
+2. Press `Ctrl+Shift+P` (Mac `Cmd+Shift+P`) to open the **Command Palette** (the search box for every command). Type `Git: Clone` and press Enter. When it asks for the repository URL, paste exactly this and press Enter:
+
+   ```
+   https://github.com/YoavLax/AIWorkshop-NonEng.git
+   ```
+
+   (The `.git` at the end is optional; the address works without it too.) If you prefer a terminal, the same thing is done with `git clone` followed by the address:
+
+   ![Terminal showing the git clone command with the repository address](assets/images/m0-git-clone.png)
+
+   Then choose where to save it: create a **new, empty folder** for the workshop first (for example `Documents\AI-Workshop`) and select it. Best practice: keep each project in its own folder so nothing gets mixed up. When VS Code offers **Open**, click it, then choose **Yes, I trust the authors**.
+3. Make sure `data`, `docs` and `output` are directly visible in the **Explorer** (left panel). If not, use **File > Open Folder** and pick the workshop folder (the one that contains `data`, `docs` and `output`). Copilot only reads your team's rules if this is the top-level folder.
+
+   ![Open Folder dialog showing the AIWorkshop-NonEng folder](assets/images/m0-clone-folder.png)
+
+   When it worked, the Explorer looks like this:
+
+   ![Explorer panel listing assets, data, docs, output and solutions, with the Source Control icon below the search icon](assets/images/m0-explorer.png)
+4. Open the chat with `Ctrl+Alt+I` (Mac `Ctrl+Cmd+I`), or click the **chat icon** (a speech bubble with sparkles) at the top of the window.
+
+   ![The chat icon: a speech bubble with sparkles next to a small arrow](assets/images/m0-chat-icon.png)
+
+   Find the **mode picker** at the bottom of the chat box: a small drop-down button that currently says **Agent** or **Ask**. Click it to see the modes:
+
+   ![Mode picker showing Agent, Ask and Plan](assets/images/m0-mode-picker.png)
 
 | Mode | In one sentence | Changes your files? |
 |------|-----------------|---------------------|
@@ -82,7 +104,19 @@ Optional: the **Live Preview** extension (Microsoft) for VS Code, so dashboards 
 | **Plan** | Thinks through the steps and asks you questions before anything is done | No |
 | **Agent** | Does multi-step work: creates and edits files, checks its own work | **Yes** (visible and undoable) |
 
-Also spot the **Source Control** icon (branching line, left bar). You will use it in Module 3.
+Also spot the **Source Control** icon (three circles joined by a branching line, third icon from the top of the left bar, see the Explorer screenshot above). A small number on it means files have changed. You will use it in Module 3.
+
+**How to give Copilot a file (you will do this a lot).** Typing `#file:docs/some-file.md` as plain text is not always recognised. Use one of these instead:
+
+- **Drag and drop:** drag the file or folder from the **Explorer** (left panel) into the chat box. This works every time.
+- **Pick from the list:** type `#` in the chat box, choose **Files & Folders** (or start typing the file name) and click the file in the list.
+- **Add Context button:** click the paperclip / **Add Context...** button in the chat box and choose the file.
+
+When it worked, the file appears as a small label above or inside the chat box:
+
+![An attached folder shown as a label with an x, a folder icon and the name data](assets/images/m0-attached-label.png)
+
+In this guide, `#file:...` and `#folder:...` mean "attach this file or folder in one of these ways".
 
 **Checkpoint:** chat answers you, and you can switch between Ask, Plan and Agent.
 
@@ -118,7 +152,9 @@ Copilot is powered by a **large language model (LLM)**. Think of it as a very we
 
 > **Key idea for today: have AI build the calculator. Don't make AI be the calculator.** We let Copilot create a spreadsheet formula or a dashboard that computes numbers reliably, then we check the result.
 
-If you want to see it for yourself, ask Copilot "How many weeks of paid parental leave does Brightwave Co. give?" in a fresh chat. It has never seen our documents, but it will probably answer confidently anyway. Module 2 fixes this.
+If you want to see it for yourself, open a **new VS Code window with no folder** (**File > New Window**; Copilot can't see our workshop files there) and ask: "How many weeks of paid parental leave does Brightwave Co. give?". It has never seen our documents, but it will probably answer confidently anyway. Module 2 fixes this.
+
+*Why a separate window?* In the workshop folder, Copilot may find `docs/parental-leave-policy.md` on its own and give a correct answer. That is also useful to know: **when Copilot can see your documents, it uses them; when it can't, it guesses.**
 
 ### 1.2 Vocabulary you will meet today
 
@@ -143,7 +179,18 @@ Tips: talk to it like a smart new colleague who has never worked here; iterate (
 
 ### 1.4 Exercise: your own prompt (10 min)
 
-Take a real writing task from your week (a candidate rejection email, an announcement, a policy explanation), with **no real names or confidential data**. Write it as Goal / Context / Format / Rules, run it in **Ask** mode, and improve it with two follow-up messages. Share your best result with a neighbour.
+**Your task:** pick one small writing task from your own week, for example a candidate rejection email, an announcement, or a policy explanation. Use **no real names or confidential data**.
+
+1. Open a new chat in **Ask** mode.
+2. Write your prompt using the four parts from 1.3. Example:
+   ```
+   Goal: Write a short rejection email to a candidate who interviewed for a Marketing role.
+   Context: Friendly company, the candidate was strong but another person was a better fit.
+   Format: Under 120 words, three short paragraphs, plain text.
+   Rules: Don't promise a future role. Don't mention other candidates. Don't invent details.
+   ```
+3. Read the answer and send **two follow-up messages** to improve it (for example "make it warmer" and "shorter, 80 words").
+4. Share your best result with a neighbour and say which follow-up helped most.
 
 **Checkpoint:** you can name what AI is risky at, and you wrote a prompt with the four parts.
 
@@ -155,10 +202,10 @@ Take a real writing task from your week (a candidate rejection email, an announc
 
 ### 2.1 Policy Q&A with sources (10 min)
 
-Open a new chat (Ask mode). Attach files with `#file:` or a whole folder with `#folder:`:
+Open a new chat (Ask mode). First **attach the `docs` folder**: drag it from the Explorer into the chat box (see "How to give Copilot a file" in Module 0). Then send:
 
 ```
-Using ONLY the files in #folder:docs, answer: how many weeks of paid parental leave do employees get, and who is eligible?
+Using ONLY the attached files in the docs folder, answer: how many weeks of paid parental leave do employees get, and who is eligible?
 
 Rules:
 - Quote the exact sentence you rely on and name the file and section.
@@ -173,20 +220,31 @@ Compare with the confident answer from Module 1: same question, much better resu
 3. What is the learning budget, and what happens if I leave soon after using it?
 4. Do we reimburse gym memberships?
 
+> **If it says it can't read the files:** the folder was probably not attached. Drag the `docs` folder into the chat again, check that it shows as a label in the chat box, and resend. If Copilot still doesn't read it, switch to **Agent** mode for this question; Agent can open files itself.
+
 > **Spot the traps.** Question 2 hits a deliberate conflict between two policies. Question 4 isn't covered anywhere; a good answer says so. If Copilot invents a gym policy, you have just seen a hallucination in the wild.
 
 ### 2.2 Make a job ad inclusive (8 min)
 
-Open `docs/job-description-draft.md` (a deliberately bad job ad), then:
+Open `docs/job-description-draft.md` (a deliberately bad job ad), attach it to the chat (drag it in, or type `#` and pick the file), then send:
 
 ```
-Review #file:docs/job-description-draft.md for inclusive language.
+Review the attached job-description-draft.md for inclusive language.
 1) List every phrase that could discourage qualified candidates (gendered, age-related, culture-fit, unnecessary requirements) and say why.
 2) Rewrite the ad: same role, welcoming tone, skills-based requirements, under 300 words.
 3) List the information that is missing and should be added (for example the pay range).
 ```
 
-Did it catch everything ("rockstar", the age hints, the unrealistic experience requirement)? **You are the final reviewer.**
+Did it catch everything? **You are the final reviewer.** Check the result against this list of problems planted in the ad:
+
+- **Title and tone:** "Rockstar", "ninja", "work hard and play hard", "banter" (culture-fit, exclusionary slang).
+- **Gendered words:** "He will be aggressive".
+- **Age hints:** "young, energetic team", "recent graduate or digital native".
+- **Unrealistic or contradictory requirements:** "entry-level" but "10+ years"; "top university".
+- **Unnecessary or discriminatory requirements:** "native English speaker", "lift 50 lbs", "clean-cut appearance", "on call nights and weekends without notice".
+- **Missing information:** pay range, benefits, working model, how decisions are made.
+
+AI is not consistent: it will usually catch most items but may skip some (for example the title "Rockstar" or "digital native") or explain one wrongly. Tick off what it found and ask a follow-up for anything it missed: *"You did not mention X. Is that a problem? Update your list."*
 
 ### 2.3 Performance review notes: a careful use case (7 min)
 

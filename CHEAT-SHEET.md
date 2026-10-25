@@ -25,7 +25,7 @@ For agents add: **INPUTS / OUTPUT / WHEN UNSURE** (what to do instead of guessin
 |---------|-----|
 | Open chat | `Ctrl+Alt+I` (Mac `Ctrl+Cmd+I`) |
 | Command Palette | `Ctrl+Shift+P` (Mac `Cmd+Shift+P`) |
-| Attach a file / folder | type `#file:` / `#folder:` and pick, or drag it into the chat |
+| Attach a file / folder | drag it from the Explorer into the chat (most reliable), or type `#` and pick it from the list |
 | Run a saved prompt | type `/` then the name (e.g. `/policy-question`) |
 | Pick a specialist agent | mode picker at the bottom of the chat |
 | New topic? | **New chat** (the `+` icon) |
